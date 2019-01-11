@@ -12,13 +12,18 @@ module.exports = {
         publicPath: '/' // public URL of the output directory when referenced in a browser
     },
 
+    devServer: {
+        contentBase: './public/', // source of static assets
+        port: 7700
+    },
+
     module: { // where we defined file patterns and their loaders
         rules: []
     },
 
     plugins: [ // array of plugins to apply to build chunk
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, '/src/public/index.html'),
+            template: path.resolve(__dirname, '/public/index.html'),
             inject: 'body'
         }),
 
@@ -31,15 +36,10 @@ module.exports = {
         // }),
 
         // clean dist folder
-        new CleanWebpackPlugin(['./scripts/autogen'], {
+        new CleanWebpackPlugin(['./public/'], {
             'verbose': true // write logs to console
         }),
 
         new webpack.NoEmitOnErrorsPlugin() // avoid publishing when compilation failed
-    ],
-
-    devServer: {
-        contentBase: './src/public', // source of static assets
-        port: 7700
-    }
+    ]
 };

@@ -19,7 +19,18 @@ module.exports = {
     },
 
     module: { // where we defined file patterns and their loaders
-        rules: []
+        rules: [
+            {
+                test: /\.(sass|scss)$/,
+                use: [{
+                    loader: "style-loader" // injects CSS
+                }, {
+                    loader: "css-loader" // translates CSS into a JS module
+                }, {
+                    loader: "sass-loader" // compiles Sass to CSS
+                }]
+            }
+        ]
     },
 
     plugins: [ // array of plugins to apply to build chunk

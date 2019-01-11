@@ -1,11 +1,18 @@
+@font-face {
+    font-family: 'CustomFont';
+    src: url('../Roboto-Regular.ttf') format('opentype');
+}
+
 $primary-color: #2E4057;
 $background: #F5F5F5;
 
-html, body {
-    margin: 0;
-    color: $primary-color;
-}
-
 body {
     background-color: $background;
+    color: $primary-color;
+    font-family: 'CustomFont', sans-serif;
+}
+#app {
+    display: block;
+    text-align: center;
+    padding: 0 16px;
 }

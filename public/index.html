@@ -4,17 +4,24 @@
         <meta charset="utf-8">
         <title>Simple Webpack Setup</title>
         <style>
+            html, body {
+                margin: 0;
+            }
             /* styling for render while resources are loading */
             app[unresolved] {
                 display: block;
-                min-height: 101vh;
+                min-height: 100vh;
                 text-align: center;
                 padding: 0 16px;
                 overflow: visible;
+                background-color: #F5F5F5;
+                color: #2E4057;
+                font-family: sans-serif;
+                font-weight: 200;
             }
         </style>
     </head>
     <body>
-        <app unresolved><h3>Simple Webpack Setup</h3></app>
+        <app id="app" unresolved>Simple Webpack Setup</app>
     </body>
 </html>

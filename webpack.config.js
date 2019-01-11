@@ -6,6 +6,8 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 module.exports = {
     mode: 'development',
 
+    devtool: 'inline-source-map',
+
     entry: path.resolve(__dirname, './src/app/index.js'), // webpack entry point - the module to start building dependency graph
 
     output: {

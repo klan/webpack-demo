@@ -4,17 +4,18 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-    entry: path.resolve(__dirname, '/src/app/index.js'), // webpack entry point. Module to start building dependency graph
+    mode: 'development',
+
+    entry: path.resolve(__dirname, './src/app/index.js'), // webpack entry point - the module to start building dependency graph
 
     output: {
-        path: path.resolve(__dirname, '/public/'), // folder to store bundle
-        filename: 'bundle.js', // name of bundle
-        publicPath: '/' // public URL of the output directory when referenced in a browser
+        path: path.resolve(__dirname, 'dist'), // folder to store bundle
+        filename: '[name].bundle.js' // name of bundle
     },
 
     devServer: {
-        contentBase: './public/', // source of static assets
-        port: 7700
+        contentBase: './dist', // source of static assets
+        port: 8080
     },
 
     module: { // where we defined file patterns and their loaders
@@ -23,7 +24,7 @@ module.exports = {
 
     plugins: [ // array of plugins to apply to build chunk
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, '/public/index.html'),
+            template: path.resolve(__dirname, './public/index.html'),
             inject: 'body'
         }),
 
@@ -36,10 +37,8 @@ module.exports = {
         // }),
 
         // clean dist folder
-        new CleanWebpackPlugin(['./public/'], {
+        new CleanWebpackPlugin(['dist'], {
             'verbose': true // write logs to console
-        }),
-
-        new webpack.NoEmitOnErrorsPlugin() // avoid publishing when compilation failed
+        })
     ]
 };

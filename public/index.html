@@ -2,10 +2,19 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Webpack Setup</title>
+        <title>Simple Webpack Setup</title>
+        <style>
+            /* styling for render while resources are loading */
+            app[unresolved] {
+                display: block;
+                min-height: 101vh;
+                text-align: center;
+                padding: 0 16px;
+                overflow: visible;
+            }
+        </style>
     </head>
     <body>
-    <h3>Simple Webpack Setup</h3>
-    <app></app>
+        <app unresolved><h3>Simple Webpack Setup</h3></app>
     </body>
 </html>

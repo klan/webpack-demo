@@ -4,20 +4,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-    mode: 'development',
-
-    // devtool: 'inline-source-map', // NOTICE: only include this in development
-
     entry: path.resolve(__dirname, './src/app/index.js'), // webpack entry point - the module to start building dependency graph
 
     output: {
         path: path.resolve(__dirname, 'dist'), // folder to store bundle
         filename: '[name].bundle.js' // name of bundle
-    },
-
-    devServer: {
-        contentBase: './dist', // source of static assets
-        port: 8080
     },
 
     module: { // where we defined file patterns and their loaders

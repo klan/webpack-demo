@@ -5,9 +5,8 @@
   "main": "/src/app/index.js",
   "private": true,
   "scripts": {
-    "build": "webpack",
-    "build:watch": "webpack --watch",
-    "start": "webpack-dev-server --history-api-fallback --inline --progress",
+    "build": "webpack --config webpack-prod.config.js",
+    "start": "webpack-dev-server --config webpack-dev.config.js --history-api-fallback --inline --progress",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -30,6 +29,7 @@
     "style-loader": "~0.23.1",
     "webpack": "~4.28.4",
     "webpack-cli": "~3.2.1",
-    "webpack-dev-server": "~3.1.14"
+    "webpack-dev-server": "~3.1.14",
+    "webpack-merge": "~4.2.1"
   }
 }

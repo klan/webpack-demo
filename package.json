@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Webpack test for Academy Friday",
   "main": "/src/app/index.js",
-  "privte": true,
+  "private": true,
   "scripts": {
     "build": "webpack",
     "build:watch": "webpack --watch",

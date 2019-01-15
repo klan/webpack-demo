@@ -1,7 +1,7 @@
 {
-  "name": "webpack-academy",
+  "name": "webpack-demo",
   "version": "1.0.0",
-  "description": "Webpack test for Academy Friday",
+  "description": "Webpack demo for Academy Friday",
   "main": "/src/app/index.js",
   "private": true,
   "scripts": {
